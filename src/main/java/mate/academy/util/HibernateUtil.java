@@ -25,14 +25,14 @@ public class HibernateUtil {
             throw new RuntimeException("Failed to build SessionFactory: " + e);
         }
     }
-        public static SessionFactory getSessionFactory() {
-            return sessionFactory;
-        }
 
-        public static void shutDown() {
-            if (sessionFactory != null) {
-                sessionFactory.close();
-            }
-        }
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 
+    public static void shutDown() {
+        if (sessionFactory != null) {
+            sessionFactory.close();
+        }
+    }
 }
