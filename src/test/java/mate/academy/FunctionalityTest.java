@@ -1,9 +1,9 @@
 package mate.academy;
 
-import com.mysql.cj.Session;
-import com.mysql.cj.xdevapi.SessionFactory;
-import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.BeforeClass;
