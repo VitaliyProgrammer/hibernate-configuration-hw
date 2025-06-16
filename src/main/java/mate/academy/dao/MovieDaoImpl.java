@@ -12,7 +12,7 @@ import org.hibernate.Transaction;
 public class MovieDaoImpl implements MovieDao {
     @Override
     public Movie add(Movie movie) {
-        Session session;
+        Session session = null;
         Transaction transaction = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
@@ -25,6 +25,10 @@ public class MovieDaoImpl implements MovieDao {
                 transaction.rollback();
             }
             throw new DataProcessingException("Can`t insert movie! " + movie, e);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
         }
     }
 
